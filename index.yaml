@@ -1,8 +1,21 @@
 apiVersion: v1
 entries:
+  argocd:
+  - apiVersion: v1
+    appVersion: 1.8.1
+    created: "2023-06-05T14:52:19.29775+05:30"
+    description: Chart to deploy ACD
+    digest: 72f051bd0e51b3fdddfaf1c7b3961af2cb67f4b7c184d91cc65622b295cf3f8f
+    maintainers:
+    - email: prakarsh@devtron.ai
+      name: Prakarsh
+    name: argocd
+    urls:
+    - https://github.com/jatin-jangir/helm-charts/raw/main/argocd-1.8.1.tgz
+    version: 1.8.1
   deployment-service:
   - apiVersion: v1
-    created: "2023-06-05T12:50:34.348318+05:30"
+    created: "2023-06-05T14:52:19.298472+05:30"
     description: helloworld chart that runs on kubernetes
     digest: 8060fd2c466249d2e89bce42b3a988a43c90461e44e5ff9f73ffebd263820f2c
     home: https://github.com/stakater-charts/helloworld
@@ -17,7 +30,7 @@ entries:
     - https://github.com/jatin-jangir/helm-charts/raw/main/deployment-service-1.0.1.tgz
     version: 1.0.1
   - apiVersion: v1
-    created: "2023-06-05T12:50:34.34794+05:30"
+    created: "2023-06-05T14:52:19.298091+05:30"
     description: helloworld chart that runs on kubernetes
     digest: a035f0e35e490aaf8d26ff922560ce98f91c57041c24158d60988a4e9e79dd30
     home: https://github.com/stakater-charts/helloworld
@@ -31,10 +44,45 @@ entries:
     urls:
     - https://github.com/jatin-jangir/helm-charts/raw/main/deployment-service-1.0.0.tgz
     version: 1.0.0
+  devtron-operator:
+  - apiVersion: v2
+    appVersion: 0.6.15
+    created: "2023-06-05T14:52:19.306661+05:30"
+    dependencies:
+    - condition: argo-cd.enabled
+      name: argo-cd
+      repository: https://argoproj.github.io/argo-helm
+      version: 5.9.1
+    - condition: security.enabled
+      name: security
+      repository: https://helm.devtron.ai
+      version: 0.x.x
+    description: Chart to configure and install Devtron. Devtron is a Kubernetes Orchestration
+      system.
+    digest: 9e4e68c533fc69ccb75efef97d2e7363a1268fc814c0bc6a9db9856618960bd0
+    home: https://devtron.ai
+    icon: https://s3-ap-southeast-1.amazonaws.com/devtron.ai/images/devtron-sqr-logo.png
+    keywords:
+    - Devtron
+    - Kubernetes
+    - Orchestration
+    - K8s
+    - Deployment
+    - argocd
+    - Hyperion
+    maintainers:
+    - email: prakarsh@devtron.ai
+      name: Prakarsh
+    name: devtron-operator
+    sources:
+    - https://github.com/jatin-jangir/charts
+    urls:
+    - https://github.com/jatin-jangir/helm-charts/raw/main/devtron-operator-0.22.53.tgz
+    version: 0.22.53
   nodejs:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-06-05T12:50:34.34885+05:30"
+    created: "2023-06-05T14:52:19.307182+05:30"
     description: A Helm chart for Kubernetes
     digest: 834eba84f51fbf71ae1f9010d6a4119897af12531afa87f9de57ef7990c92526
     name: nodejs
@@ -42,4 +90,30 @@ entries:
     urls:
     - https://github.com/jatin-jangir/helm-charts/raw/main/nodejs-0.1.0.tgz
     version: 0.1.0
-generated: "2023-06-05T12:50:34.347075+05:30"
+  security:
+  - apiVersion: v2
+    appVersion: 0.1.1
+    created: "2023-06-05T14:52:19.30763+05:30"
+    dependencies:
+    - condition: clair.enabled
+      name: clair
+      repository: https://helm.devtron.ai
+      version: 0.x.x
+    description: A Helm chart for devtron to enable security integration
+    digest: fb678b08ef0e57f5b662d6ef32f49d7eaf68a93a0c9c189b29823f6ca9433bb0
+    keywords:
+    - kubernetes
+    - security
+    - k8s
+    - scanning
+    - container registry
+    - image scanning
+    - source code scanning
+    name: security
+    sources:
+    - https://github.com/jatin-jangir/charts
+    type: application
+    urls:
+    - https://github.com/jatin-jangir/helm-charts/raw/main/security-0.1.5.tgz
+    version: 0.1.5
+generated: "2023-06-05T14:52:19.296557+05:30"
