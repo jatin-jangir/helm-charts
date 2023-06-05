@@ -14,7 +14,7 @@ entries:
       name: Stakater
     name: deployment-service
     urls:
-    - https://github.com/jatin-jangir/helm-charts/deployment-service-1.0.1.tgz
+    - https://github.com/jatin-jangir/helm-charts/raw/main/deployment-service-1.0.1.tgz
     version: 1.0.1
   - apiVersion: v1
     created: "2023-06-05T12:50:34.34794+05:30"
@@ -29,7 +29,7 @@ entries:
       name: Stakater
     name: deployment-service
     urls:
-    - https://github.com/jatin-jangir/helm-charts/deployment-service-1.0.0.tgz
+    - https://github.com/jatin-jangir/helm-charts/raw/main/deployment-service-1.0.0.tgz
     version: 1.0.0
   nodejs:
   - apiVersion: v2
@@ -40,6 +40,6 @@ entries:
     name: nodejs
     type: application
     urls:
-    - https://github.com/jatin-jangir/helm-charts/nodejs-0.1.0.tgz
+    - https://github.com/jatin-jangir/helm-charts/raw/main/nodejs-0.1.0.tgz
     version: 0.1.0
 generated: "2023-06-05T12:50:34.347075+05:30"
