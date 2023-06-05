@@ -100,7 +100,7 @@ components:
       volumeSize: "20Gi"
 
   migrator:
-    image: "quay.io/devtron/migrator:ec1dcab8-149-13278"
+    image: "quay.io/devtron/test:f5341a62-27-195"
     envVars:
       devtron:
         GIT_BRANCH: "main"
@@ -108,7 +108,7 @@ components:
         GIT_REPO_URL: "https://github.com/devtron-labs/devtron.git"
         DB_NAME: "orchestrator"
         GIT_HASH: "9f3934ee51a1cfa1631f90bc6cc55a240aa98b07"
-        ENABLE_DB_CONNECTION_VALIDATE_COUNTER: "true"
+        ENABLE_DB_CONNECTION_VALIDATE_COUNTER: true
         DB_CONNECTION_RETRY_DELAY: "20"
         DB_CONNECTION_RETRY_COUNTER: "10"
       casbin:
@@ -117,7 +117,7 @@ components:
         GIT_REPO_URL: "https://github.com/devtron-labs/devtron.git"
         DB_NAME: "casbin"
         GIT_HASH: "9f3934ee51a1cfa1631f90bc6cc55a240aa98b07"
-        ENABLE_DB_CONNECTION_VALIDATE_COUNTER: "true"
+        ENABLE_DB_CONNECTION_VALIDATE_COUNTER: true
         DB_CONNECTION_RETRY_DELAY: "20"
         DB_CONNECTION_RETRY_COUNTER: "10"
 
